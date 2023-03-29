@@ -1,0 +1,159 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+.container{
+  width: 100%;
+  background-size: cover;
+  margin: 0 0;
+  height: 100vh;
+  padding: 0 0;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 15px;
+}
+::-webkit-scrollbar-track {
+  background-image: linear-gradient(#100827, #411f74, #240851 );
+  border-radius: 100vw;
+  overflow: hidden;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(#100827, #240851);
+  border-radius: 100vw;
+  -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+}
+nav{
+  display: flex;
+  width: 100%;
+  align-self: center;
+  flex-wrap: wrap;
+  padding: 5px 0;
+  user-select: none;
+}
+nav ul{
+   flex: 1;
+   text-align: right;
+   padding-right: 30px;
+   margin-top: 12px;
+}
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 30px;
+}
+nav ul li a{
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  user-select: none;
+}
+nav ul li a::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #14c1b4;
+  transition: 0.3s;
+}
+nav ul li a:hover::after{
+  width: 50%;
+}
+nav::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1000;
+}
+.logo2{
+  width: 280px;
+  height: 100px;
+  margin-top: 10px;
+  margin-left: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.accordion {
+  width: 800px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: "Quicksand", sans-serif;
+  background: #100827;
+  user-select: none;
+}
+
+.accordion__label,
+.accordion__content {
+  padding: 14px 20px;
+}
+
+.accordion__label {
+  display: block;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+}
+
+.accordion__label:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.accordion__label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  width: 12px;
+  height: 6px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+  background-size: contain;
+  transition: transform 0.4s;
+}
+
+.accordion__content {
+  background: #ffffff;
+  line-height: 1.6;
+  font-size: 0.85em;
+  display: none;
+}
+
+.accordion__input {
+  display: none;
+}
+
+.accordion__input:checked ~ .accordion__content {
+  display: block;
+}
+
+.accordion__input:checked ~ .accordion__label::after {
+  transform: translateY(-50%) rotate(0.5turn);
+}
